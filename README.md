@@ -3,22 +3,20 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+To run this project please follow the instructions below:
 
-* Ruby version
-
-* System dependencies
 
 * Configuration
 
-* Database creation
+1. Clone the repository:
+   git clone https://github.com/yourusername/teacher-portal.git
+   cd teacher-portal
 
-* Database initialization
+2. Install the required gems:  "bundle install"
 
-* How to run the test suite
+3. Database Setup:  
+   (a) rails db:create //database creation
+   (b) rails db:migrate && db:seed   //db initialization
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+To login use these credentials ->  email: testuser123@gmail.com , password: test123
