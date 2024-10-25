@@ -20,3 +20,6 @@ To run this project please follow the instructions below:
 
 
 To login use these credentials ->  email: testuser123@gmail.com , password: test123
+
+
+NOTE: It is necessary to run the seed file before login, otherwise you won't be able to login.
