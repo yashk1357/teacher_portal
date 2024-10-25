@@ -1,0 +1,336 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #efeaea; 
+  color: #333;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Login Form Styles */
+.login-form {
+  background-color: #d6d0d0;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Form Styles */
+.form-label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+  color: #555;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #1a73e8;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  color: #555;
+}
+
+.form-checkbox {
+  margin-right: 8px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #423f3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #6c6060;
+}
+
+.extra-links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.extra-links a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+}
+
+/* Table Styles for Student Listing */
+table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background-color: #1a73e8;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+tr:hover {
+  background-color: #f5f8fb;
+}
+
+/* Button Styles for Student Listing */
+.btn {
+  display: inline-block;
+  background-color: #1a73e8;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #155bb5;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    display: block;
+    text-align: right;
+  }
+
+  th {
+    position: absolute;
+    left: -9999px;
+  }
+
+  td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: 600;
+  }
+}
+
+/* Button Styling for Actions */
+.btn-action {
+  padding: 8px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  margin-right: 6px;
+  color: #fff;
+}
+
+.edit-btn {
+  background-color:  #796565;
+}
+
+.edit-btn:hover {
+  background-color: #423f3e;
+}
+
+.save-btn {
+  background-color: #4285f4;
+}
+
+.save-btn:hover {
+  background-color: #356ac1;
+}
+
+.btn-delete {
+  background-color: #f3645a;
+}
+
+.btn-delete:hover {
+  background-color: #cc3224;
+}
+
+/* Modal Background Overlay */
+#modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 25px;
+  border-radius: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  height: 200px;
+  max-width: 90%;
+}
+
+/* Button Styles for Modal */
+.btn {
+  padding: 10px 15px;
+  background-color: #4378ec;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #423f3e;
+}
+
+#close-modal {
+  background-color: #f3645a;
+}
+
+#close-modal:hover {
+  background-color: #cc3224;
+}
+
+
+/* Adjust table cell styles for better wrapping */
+td {
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle; 
+  word-wrap: break-word; 
+}
+/* Logout Button Styling */
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.custom-logout-btn {
+  background-color: #423f3e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Table Container for Scrollability */
+.table-container {
+  max-height: 60vh; 
+  overflow-y: auto; 
+  width: 100%; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table and Cell Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+th {
+  background-color: #423f3e;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Button Group Styling */
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .table-container {
+    max-height: 50vh; 
+  }
+}
+
+
+.modal-div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 10px;
+  height: 150px;
+}

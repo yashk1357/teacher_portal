@@ -1,0 +1,70 @@
+<!-- app/views/students/index.html.erb -->
+
+
+<table id="students-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Subject</th>
+      <th>Marks</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @students.each do |student| %>
+      <div class="table-container">
+      <tr data-student-id="<%= student.id %>">
+         <td class="editable" contenteditable="false" data-field="name"><%= student.name %></td>
+        <td><%= student.subject.name if student.subject %></td>
+        <td class="editable" contenteditable="false" data-field="marks"><%= student.marks %></td>
+        
+        <td>
+              <div class="button-group">
+                <button class="edit-btn btn-action" data-student-id="<%= student.id %>">Edit</button>
+                <button class="save-btn btn-action" data-student-id="<%= student.id %>" style="display: none;">Save</button>
+                <%= button_to 'Delete', student_path(student), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-action btn-delete' %>
+                
+              </div>
+        </td>
+      </tr>
+    <% end %>
+    </div>
+  </tbody>
+</table>
+
+<button class="btn" id="new-student-button">New Student</button>
+
+<!-- Modal Background Overlay -->
+<div id="modal-overlay" style="display: none;"></div>
+
+<!-- New Student Modal -->
+<div id="new-student-modal" class="modal">
+  <h3>Add New Student</h3>
+  <form id="new-student-form">
+  <div class="modal-div">
+    <div>
+      <label for="student_name">Name</label>
+      <input type="text" id="student_name" required>
+    </div>
+    <div>
+      <label for="subject_id">Subject</label>
+      <select id="subject_id" required>
+        <option value="">Select a Subject</option>
+        <%= options_from_collection_for_select(Subject.all, :id, :name) %>
+      </select>
+    </div>
+    <div>
+      <label for="marks">Marks</label>
+      <input type="number" id="marks" required>
+    </div>
+    <div>
+      <button type="submit" class="btn">Add Student</button>
+      <button type="button" class="btn" id="close-modal">Cancel</button>
+    </div>
+    </div>
+  </form>
+</div>
+
+
+
+
